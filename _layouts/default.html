@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title }}</title>
+  <style>
+    /* 白天模式：精装实体书排版 */
+    body {
+      background-color: #f9f8f4; color: #2c2c2c;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      line-height: 1.8; letter-spacing: 0.05em;
+      max-width: 750px; margin: 0 auto; padding: 50px 20px;
+    }
+    header { 
+      border-bottom: 1px solid #e0dcd3; padding-bottom: 20px; margin-bottom: 40px; 
+      display: flex; justify-content: space-between; align-items: baseline; 
+    }
+    header a.site-title { color: #1a1a1a; text-decoration: none; font-size: 1.5em; font-weight: bold; }
+    nav a { margin-left: 20px; color: #8b3a3a; text-decoration: none; font-size: 1.1em; }
+    nav a:hover { color: #b22222; }
+    h1, h2, h3 { color: #1a1a1a; margin-top: 2em; font-weight: bold; border-bottom: 1px solid #e0dcd3; padding-bottom: 10px; }
+    a { color: #8b3a3a; text-decoration: none; }
+    a:hover { color: #b22222; text-shadow: 0 0 5px rgba(139,58,58,0.2); }
+    blockquote { border-left: 3px solid #8b3a3a; background-color: #f0eee8; color: #5c5c5c; padding: 15px 20px; margin: 30px 0; font-style: italic; }
+    .post-list { list-style: none; padding: 0; }
+    .post-list li { margin-bottom: 1.5rem; border-left: 2px solid #e0dcd3; padding-left: 15px; transition: border-color 0.3s; }
+    .post-list li:hover { border-left: 2px solid #8b3a3a; }
+    .post-meta { font-size: 0.9em; color: #888; margin-left: 10px; font-family: sans-serif; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">首页</a>
+      <a href="{{ '/about.html' | relative_url }}">关于</a>
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>
