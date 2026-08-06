@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article style="padding-top: 40px;">
+  <!-- 文章大标题和日期 -->
+  <h1 style="font-size: 2.5em; text-align: center; border-bottom: none; margin-bottom: 10px; color: #1a1a1a;">
+    {{ page.title }}
+  </h1>
+  <p style="text-align: center; color: #888; font-family: sans-serif; letter-spacing: 0.1em; margin-bottom: 60px;">
+    {{ page.date | date: "%Y年%m月%d日" }}
+  </p>
+
+  <!-- 这里是你写的 Markdown 正文展示区 -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
