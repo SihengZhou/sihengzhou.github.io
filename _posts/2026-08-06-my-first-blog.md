@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第一篇：回归纯粹的写作
-image: /assets/images/hero-bg.jpg
+image: /assets/images/首页.jpg
 ---
 
 这是我在全新专属书斋里写下的第一段文字。
