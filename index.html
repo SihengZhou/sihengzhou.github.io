@@ -2,28 +2,26 @@
 layout: default
 ---
 <style>
-  /* 首页首图黑魔法：突破 main 容器限制，无限延展到屏幕边缘 */
+  /* 首页首图黑魔法 */
   .hero-section {
     width: 100vw;
-    height: 65vh; /* 占据屏幕65%的高度 */
+    height: 65vh; 
     margin-left: calc(-50vw + 50%); 
-    /* 【自定义首图】在这里替换为你想要的图片链接 👇 */
+    /* 👇 就是下面这一行，在这里把单引号里的链接换成你想要的图片网址 */
     background-image: url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=2000&q=80'); 
     background-size: cover;
     background-position: center;
     position: relative;
-    top: -50px; /* 向上微调与顶部对齐 */
+    top: -50px; 
   }
 
   /* "文章列表" 小标题 */
   .section-subtitle {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.9em;
     letter-spacing: 0.2em;
-    text-transform: uppercase;
     color: #5a4b41;
     margin: 40px 0 80px 0;
-    font-family: sans-serif;
   }
 
   /* 图文左右排版列表 */
@@ -32,16 +30,15 @@ layout: default
     align-items: center;
     justify-content: space-between;
     margin-bottom: 100px;
-    gap: 60px; /* 文字和图片的间距 */
+    gap: 60px; 
   }
 
   /* 左侧文字区 */
   .post-text {
-    flex: 1; /* 自动占据剩余空间 */
+    flex: 1; 
   }
   .post-meta {
     font-size: 0.8em;
-    font-family: sans-serif;
     color: #888;
     letter-spacing: 0.1em;
     margin-bottom: 10px;
@@ -62,8 +59,6 @@ layout: default
   .read-more {
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    font-family: sans-serif;
-    text-transform: uppercase;
     border-bottom: 1px solid #5a4b41;
     padding-bottom: 3px;
   }
@@ -71,8 +66,8 @@ layout: default
 
   /* 右侧配图区 */
   .post-image {
-    width: 55%; /* 图片占据较大比例，增强视觉感 */
-    aspect-ratio: 16 / 10; /* 图片比例 */
+    width: 55%; 
+    aspect-ratio: 16 / 10; 
     object-fit: cover;
   }
 </style>
@@ -87,11 +82,9 @@ layout: default
       <div class="post-text">
         <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <!-- 自动过滤HTML代码并截取前100个字作为摘要 -->
         <p>{{ post.content | strip_html | truncate: 100 }}</p>
         <a class="read-more" href="{{ post.url | relative_url }}">阅读全文</a>
       </div>
-      <!-- 获取你在文章顶部设置的 image 链接，没有则显示默认图 -->
       {% if post.image %}
         <img class="post-image" src="{{ post.image }}" alt="{{ post.title }}">
       {% else %}
